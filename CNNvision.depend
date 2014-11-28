@@ -1,0 +1,273 @@
+# depslib dependency file v1.0
+1417173102 source:/media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/main.cpp
+	<iostream>
+	"Experience.hpp"
+	"tiny_cnn.h"
+	"caes.hpp"
+
+1415375823 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/Experience.hpp
+	"State.hpp"
+	"Action.hpp"
+
+1414508879 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/State.hpp
+	<cv.hpp>
+
+1390885782 /usr/include/opencv/cv.hpp
+	<cv.h>
+
+1390885782 /usr/include/opencv/cv.h
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/imgproc_c.h"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/video/tracking.hpp"
+	"opencv2/features2d/features2d.hpp"
+	"opencv2/flann/flann.hpp"
+	"opencv2/calib3d/calib3d.hpp"
+	"opencv2/objdetect/objdetect.hpp"
+	"opencv2/legacy/compat.hpp"
+	"opencv2/core/internal.hpp"
+
+1415113146 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/Action.hpp
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/tiny_cnn.h
+	"config.h"
+	"network.h"
+	"average_pooling_layer.h"
+	"convolutional_layer.h"
+	"fully_connected_layer.h"
+	"fully_connected_dropout_layer.h"
+	"activation_function.h"
+	"loss_function.h"
+	"optimizer.h"
+	"mnist_parser.h"
+	"image.h"
+	"deform.h"
+	"product.h"
+
+1416911334 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/config.h
+
+1416923861 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/network.h
+	<stdexcept>
+	<algorithm>
+	<iterator>
+	<iomanip>
+	<map>
+	<set>
+	"util.h"
+	"activation_function.h"
+	"loss_function.h"
+	"optimizer.h"
+	"fully_connected_layer.h"
+	"layer.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/util.h
+	<vector>
+	<limits>
+	<functional>
+	<random>
+	<tbb/tbb.h>
+	<tbb/task_group.h>
+	"fixed_point.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/fixed_point.h
+	<cstdint>
+	<limits>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/activation_function.h
+	"util.h"
+	<algorithm>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/loss_function.h
+	"util.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/optimizer.h
+	"util.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/fully_connected_layer.h
+	"layer.h"
+	"product.h"
+	"dropout.h"
+
+1416932501 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/layer.h
+	"util.h"
+	"product.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/product.h
+	<immintrin.h>
+	<cstdint>
+	<cassert>
+	<numeric>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/dropout.h
+	"layer.h"
+	"product.h"
+	"util.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/average_pooling_layer.h
+	"util.h"
+	"partial_connected_layer.h"
+
+1416931005 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/partial_connected_layer.h
+	"util.h"
+	"layer.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/convolutional_layer.h
+	"util.h"
+	"partial_connected_layer.h"
+	"image.h"
+	<assert.h>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/image.h
+	<assert.h>
+	<vector>
+	<string>
+	<fstream>
+	<cstdint>
+	<boost/detail/endian.hpp>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/fully_connected_dropout_layer.h
+	"fully_connected_layer.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/mnist_parser.h
+	"util.h"
+	<fstream>
+	<cstdint>
+	<boost/detail/endian.hpp>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn/deform.h
+	"util.h"
+
+1417171517 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/caes.hpp
+	"tiny_cnn.h"
+	"util.h"
+	"autoencoder_network.h"
+	"convolutional_AE_layer.h"
+
+1416931266 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/deconvolutional_layer.h
+	"util.h"
+	"partial_connected_layer.h"
+	"image.h"
+	<assert.h>
+
+1417168801 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/autoencoder_network.h
+	"network.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/tiny_cnn.h
+	"config.h"
+	"network.h"
+	"average_pooling_layer.h"
+	"convolutional_layer.h"
+	"fully_connected_layer.h"
+	"fully_connected_dropout_layer.h"
+	"activation_function.h"
+	"loss_function.h"
+	"optimizer.h"
+	"mnist_parser.h"
+	"image.h"
+	"deform.h"
+	"product.h"
+
+1416911334 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/config.h
+
+1416923861 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/network.h
+	<stdexcept>
+	<algorithm>
+	<iterator>
+	<iomanip>
+	<map>
+	<set>
+	"util.h"
+	"activation_function.h"
+	"loss_function.h"
+	"optimizer.h"
+	"fully_connected_layer.h"
+	"layer.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/util.h
+	<vector>
+	<limits>
+	<functional>
+	<random>
+	<tbb/tbb.h>
+	<tbb/task_group.h>
+	"fixed_point.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/fixed_point.h
+	<cstdint>
+	<limits>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/activation_function.h
+	"util.h"
+	<algorithm>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/loss_function.h
+	"util.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/optimizer.h
+	"util.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/fully_connected_layer.h
+	"layer.h"
+	"product.h"
+	"dropout.h"
+
+1417183276 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/layer.h
+	"util.h"
+	"product.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/product.h
+	<immintrin.h>
+	<cstdint>
+	<cassert>
+	<numeric>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/dropout.h
+	"layer.h"
+	"product.h"
+	"util.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/average_pooling_layer.h
+	"util.h"
+	"partial_connected_layer.h"
+
+1416931005 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/partial_connected_layer.h
+	"util.h"
+	"layer.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/convolutional_layer.h
+	"util.h"
+	"partial_connected_layer.h"
+	"image.h"
+	<assert.h>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/image.h
+	<assert.h>
+	<vector>
+	<string>
+	<fstream>
+	<cstdint>
+	<boost/detail/endian.hpp>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/fully_connected_dropout_layer.h
+	"fully_connected_layer.h"
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/mnist_parser.h
+	"util.h"
+	<fstream>
+	<cstdint>
+	<boost/detail/endian.hpp>
+
+1414510348 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/deform.h
+	"util.h"
+
+1417170931 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/convolutional_AE_layer.h
+	"util.h"
+	"partial_connected_AE_layer.h"
+	"image.h"
+	<assert.h>
+
+1417170931 /media/Data/Dropbox/Thesis_Project/Introduction/Project/Thesis/include/partial_connected_AE_layer.h
+	"util.h"
+	"layer.h"
+

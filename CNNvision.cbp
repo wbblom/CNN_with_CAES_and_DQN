@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CNNvision" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Thesis" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-pg" />
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Thesis" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-march=corei7-avx" />
+			<Add option="-std=c++11" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="/usr/include/opencv" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add option="-lopencv_calib3d" />
+			<Add option="-lopencv_contrib" />
+			<Add option="-lopencv_core" />
+			<Add option="-lopencv_features2d" />
+			<Add option="-lopencv_flann" />
+			<Add option="-lopencv_highgui" />
+			<Add option="-lopencv_imgproc" />
+			<Add option="-lopencv_legacy" />
+			<Add option="-lopencv_ml" />
+			<Add option="-lopencv_nonfree" />
+			<Add option="-lopencv_objdetect" />
+			<Add option="-lopencv_photo" />
+			<Add option="-lopencv_stitching" />
+			<Add option="-lopencv_superres" />
+			<Add option="-lopencv_ts" />
+			<Add option="-lopencv_video" />
+			<Add option="-lopencv_videostab" />
+			<Add option="-ltbb" />
+			<Add option="-mavx" />
+			<Add option="-msse" />
+			<Add directory="include" />
+		</Linker>
+		<Unit filename="include/Action.hpp" />
+		<Unit filename="include/Experience.hpp" />
+		<Unit filename="include/State.hpp" />
+		<Unit filename="include/autoencoder_network.h" />
+		<Unit filename="include/caes.hpp" />
+		<Unit filename="include/convolutional_AE_layer.h" />
+		<Unit filename="include/convolutional_layer.h" />
+		<Unit filename="include/layer.h" />
+		<Unit filename="include/partial_connected_AE_layer.h" />
+		<Unit filename="include/partial_connected_layer.h" />
+		<Unit filename="include/tiny_cnn.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -27,6 +27,7 @@
 #pragma once
 #include "util.h"
 #include "layer.h"
+#include "stdio.h"
 
 namespace tiny_cnn {
 
@@ -41,11 +42,15 @@ public:
 
     partial_connected_AE_layer(int in_dim, int out_dim, int weight_dim, int encoder_bias_dim, int decoder_bias_dim, float_t scale_factor = 1.0)
         : AE_layer<N, Activation> (in_dim, out_dim, weight_dim, encoder_bias_dim, decoder_bias_dim),
-        encoder_weight2io_(weight_dim), encoder_out2wi_(out_dim), encoder_in2wo_(in_dim), encoder_bias2out_(encoder_bias_dim), encoder_out2bias_(encoder_bias_dim),
-        decoder_weight2io_(weight_dim), decoder_out2wi_(out_dim), decoder_in2wo_(in_dim), decoder_bias2out_(decoder_bias_dim), decoder_out2bias_(decoder_bias_dim),
+        encoder_weight2io_(weight_dim), encoder_out2wi_(out_dim), encoder_in2wo_(in_dim),
+        encoder_bias2out_(encoder_bias_dim), encoder_out2bias_(out_dim),
+        decoder_weight2io_(weight_dim), decoder_out2wi_(in_dim), decoder_in2wo_(out_dim),
+        decoder_bias2out_(decoder_bias_dim), decoder_out2bias_(in_dim),
         scale_factor_(scale_factor) {
-        if (in_dim <= 0 || weight_dim <= 0 || weight_dim <= 0 || encoder_bias_dim <= 0 || decoder_bias_dim)
+        printf("New partial_connected_AE_layer\nin_dim: %d\nout_dim: %d\nweight_dim: %d\nencoder_bias_dim: %d\ndecoder_bias_dim: %d\n", in_dim, out_dim, weight_dim, encoder_bias_dim, decoder_bias_dim);
+        if (in_dim <= 0 || weight_dim <= 0 || weight_dim <= 0 || encoder_bias_dim <= 0 || decoder_bias_dim <= 0)
             throw nn_error("invalid layer size");
+            encoder_weight2io_ = std::vector<io_connections>(weight_dim, std::vector<std::pair<unsigned short, unsigned short> >(100, std::make_pair(0, 0)));
     }
 
     int param_size() const {
@@ -77,15 +82,15 @@ public:
     }
 
     void connect_encoder_weight(int input_index, int output_index, int weight_index) {
-        encoder_weight2io_[weight_index].push_back(std::make_pair(input_index, output_index));
-        encoder_out2wi_[output_index].push_back(std::make_pair(weight_index, input_index));
-        encoder_in2wo_[input_index].push_back(std::make_pair(weight_index, output_index));
+        encoder_weight2io_[weight_index].push_back(std::make_pair((unsigned short)input_index, (unsigned short)output_index));
+        encoder_out2wi_[output_index].push_back(std::make_pair((unsigned short)weight_index, (unsigned short)input_index));
+        encoder_in2wo_[input_index].push_back(std::make_pair((unsigned short)weight_index, (unsigned short)output_index));
     }
 
     void connect_decoder_weight(int input_index, int output_index, int weight_index) {
-        decoder_weight2io_[weight_index].push_back(std::make_pair(input_index, output_index));
-        decoder_out2wi_[output_index].push_back(std::make_pair(weight_index, input_index));
-        decoder_in2wo_[input_index].push_back(std::make_pair(weight_index, output_index));
+        decoder_weight2io_[weight_index].push_back(std::make_pair((unsigned short)input_index, (unsigned short)output_index));
+        decoder_out2wi_[output_index].push_back(std::make_pair((unsigned short)weight_index, (unsigned short)input_index));
+        decoder_in2wo_[input_index].push_back(std::make_pair((unsigned short)weight_index, (unsigned short)output_index));
     }
 
     void connect_encoder_bias(int bias_index, int output_index) {

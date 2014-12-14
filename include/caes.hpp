@@ -5,10 +5,12 @@
 #include "util.h"
 #include "autoencoder_network.h"
 #include "convolutional_AE_layer.h"
+#include <stdio.h>
 
 class caes : public autoencoder_network {
     public:
         caes(int in_width, int in_height, int in_channels, int levels, int* window_sizes, int* num_filters){
+            printf("New %d-layer CAES\n", levels);
             levels_ = levels;
             init_network(in_width, in_height, in_channels, levels, window_sizes, num_filters);
         }
@@ -26,6 +28,7 @@ class caes : public autoencoder_network {
             int height = in_height;
             int channels = in_channels;
             for (int level = 0; level < levels; level++){
+                printf("in_size: %d x %d x %d\n", width, height, channels);
                 add(new CAE(width, height, window_sizes[level], channels, num_filters[level]));
                 width = width - window_sizes[level] + 1;
                 height = height - window_sizes[level] + 1;

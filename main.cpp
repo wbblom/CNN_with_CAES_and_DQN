@@ -27,7 +27,9 @@ int argmax(tiny_cnn::vec_t* in, size_t num){
 int main()
 {
 
-
+//    vector<vector<pair<int,int> > > tmp(8);
+//    tmp[0].push_back(make_pair(200, 20));
+//    cout << tmp[0].size() << endl;
 
 
 

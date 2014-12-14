@@ -29,6 +29,7 @@
 #include "partial_connected_AE_layer.h"
 #include "image.h"
 #include <assert.h>
+#include <stdio.h>
 
 namespace tiny_cnn {
 
@@ -50,7 +51,10 @@ public:
         weight_(window_size, window_size, in_channels*out_channels),
         window_size_(window_size)
     {
+        printf("New Convolutional Auto-Eencoder Layer\nin: %d x %d x %d\nwindow: %d x %d\nout: %d x %d x %d\n", in_width, in_height, in_channels, window_size, window_size, (in_width - window_size + 1), (in_height - window_size + 1), out_channels);
+        printf("Set up neural connections...\n");
         init_connection(connection_table(), connection_table());
+        printf("Set up neural connections DONE\n");
     }
 
     convolutional_AE_layer(int in_width, int in_height,
@@ -104,6 +108,7 @@ public:
 
 private:
     void init_connection(const connection_table& encoder_table, const connection_table& decoder_table) {
+        printf("Encoder weights...\n");
         for (int inc = 0; inc < encoder_in_.depth_; inc++) {
             for (int outc = 0; outc < encoder_out_.depth_; outc++) {
                 if (!encoder_table.is_connected(outc, inc)) {
@@ -115,12 +120,12 @@ private:
                         connect_encoder_kernel(inc, outc, x, y);
             }
         }
-
+        printf("Encoder biases...\n");
         for (int outc = 0; outc < encoder_out_.depth_; outc++)
             for (int y = 0; y < encoder_out_.height_; y++)
                 for (int x = 0; x < encoder_out_.width_; x++)
                     this->connect_encoder_bias(outc, encoder_out_.get_index(x, y, outc));
-
+        printf("Decoder weights...\n");
         for (int inc = 0; inc < decoder_in_.depth_; inc++) {
             for (int outc = 0; outc < decoder_out_.depth_; outc++) {
                 if (!decoder_table.is_connected(outc, inc)) {
@@ -132,7 +137,7 @@ private:
                         connect_decoder_kernel(inc, outc, x, y);
             }
         }
-
+        printf("Decoder biases...\n");
         for (int outc = 0; outc < decoder_out_.depth_; outc++)
             for (int y = 0; y < decoder_out_.height_; y++)
                 for (int x = 0; x < decoder_out_.width_; x++)
@@ -155,12 +160,14 @@ private:
         int dy1 = std::min(window_size_, y + 1);
         int dx0 = std::max(window_size_ - decoder_out_.width_ + x, 0);
         int dx1 = std::min(window_size_, x + 1);
-        for (int dy = dy0; dy < dy1; dy++)
-            for (int dx = dx0; dx < dx1; dx++)
+        for (int dy = dy0; dy < dy1; dy++){
+            for (int dx = dx0; dx < dx1; dx++){
                 this->connect_decoder_weight(
                 decoder_in_.get_index(x - dx, y - dy, inc),
                 decoder_out_.get_index(x, y, outc),
                 weight_.get_index(dx, dy, outc * decoder_in_.depth_ + inc)); // check this later
+            }
+        }
     }
 
     tensor3d encoder_in_;
